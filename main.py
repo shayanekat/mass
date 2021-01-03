@@ -13,6 +13,7 @@ for line in data:
     row = line.split(",")
     mounth.append(row[0])
     mass.append(float(row[1].replace("\n","")))
+data.close()
 
 X = []
 Y = []
