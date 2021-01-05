@@ -29,13 +29,12 @@ for i in range(len(mounth)-1):
     Y.append(mass[i+1]-mass[i])
 X, Y = np.array(X), np.array(Y)
 mean = np.zeros(X.shape) + np.mean(Y)
-print(mean)
 #=====FRONTEND=====
 
 # curves
-pp.plot(X, Y, label="Masse")
+pp.bar(X, Y, label="Masse")
 pp.plot(X, np.zeros((len(X), 1)), "k")
-pp.plot(X, mean, "k:", label=f"valeur moyenne = {np.mean(Y)}")
+pp.plot(X, mean, "k:", label=f"valeur moyenne = {round(np.mean(Y), 2)}")
 
 # diplay 
 pp.legend(loc=1)
