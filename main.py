@@ -1,5 +1,9 @@
-import matplotlib.pyplot as pp
-import numpy as np
+"""
+    Shayane Katchera
+    Suivit de ma masse
+"""
+
+import matplotlib.pyplot as plt
 
 #=====BACKEND=====
 #init var
@@ -21,30 +25,30 @@ if choice == "annuel":
     for i in range(len(mounth)-12,len(mounth)):
         X.append(mounth[i])
         Y.append(mass[i])
-        objectif.append(60)
-
 if choice == "tout":
     for i in range(len(mounth)):
         X.append(i)
         Y.append(mass[i])
-        objectif.append(60)
 
 #=====FRONTEND=====
-pp.grid()
-ax = pp.axes()        
-ax.yaxis.grid() # vertical lines
+plt.grid()
+# ax = plt.axes()        
+# ax.yaxis.grid() # vertical lines
 
 # curves
-pp.plot(X, Y, label="Masse")
-pp.plot(X, objectif, "g", label="objectif")
-pp.axhspan(45, 50, alpha=0.5, color='red', label="Minimum limit")
+plt.plot(X, Y, label="Masse")
+plt.axhspan(45, 50, alpha=0.5, color='red', label="Minimum limit")
+plt.axhspan(59, 61, alpha=0.5, color="blue", label="Objective")
 
 # diplay 
-pp.legend(loc=1)
-pp.xlabel("temps (mois)")
-pp.ylabel("masse (kg)")
-pp.title("Monthly Mass Tracking")
-pp.xticks(rotation="vertical",fontsize=7)
+plt.legend(loc=1)
+plt.xlabel("temps (mois)")
+plt.ylabel("masse (kg)")
+plt.title("Monthly Mass Tracking")
+plt.xticks(rotation="vertical",fontsize=7)
+
+plt.show()
 
 
-pp.show()
+    
+    
